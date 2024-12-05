@@ -1,0 +1,29 @@
+﻿  AssetManager.cpp
+  Game.cpp
+  GameState.cpp
+  InputManager.cpp
+  Main.cpp
+  MainMenuState.cpp
+  Pipe.cpp
+C:\Users\volen\source\repos\GameProject\GameProject\Pipe.cpp(9,45): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\volen\source\repos\GameProject\GameProject\Pipe.cpp(9,45): warning C4244:         with
+C:\Users\volen\source\repos\GameProject\GameProject\Pipe.cpp(9,45): warning C4244:         [
+C:\Users\volen\source\repos\GameProject\GameProject\Pipe.cpp(9,45): warning C4244:             T=unsigned int
+C:\Users\volen\source\repos\GameProject\GameProject\Pipe.cpp(9,45): warning C4244:         ]
+C:\Users\volen\source\repos\GameProject\GameProject\Pipe.cpp(14,45): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\volen\source\repos\GameProject\GameProject\Pipe.cpp(14,45): warning C4244:         with
+C:\Users\volen\source\repos\GameProject\GameProject\Pipe.cpp(14,45): warning C4244:         [
+C:\Users\volen\source\repos\GameProject\GameProject\Pipe.cpp(14,45): warning C4244:             T=unsigned int
+C:\Users\volen\source\repos\GameProject\GameProject\Pipe.cpp(14,45): warning C4244:         ]
+C:\Users\volen\source\repos\GameProject\GameProject\Pipe.cpp(19,45): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\volen\source\repos\GameProject\GameProject\Pipe.cpp(19,45): warning C4244:         with
+C:\Users\volen\source\repos\GameProject\GameProject\Pipe.cpp(19,45): warning C4244:         [
+C:\Users\volen\source\repos\GameProject\GameProject\Pipe.cpp(19,45): warning C4244:             T=unsigned int
+C:\Users\volen\source\repos\GameProject\GameProject\Pipe.cpp(19,45): warning C4244:         ]
+  StateMachine.cpp
+  Generating code
+  408 of 409 functions (99.8%) were compiled, the rest were copied from previous compilation.
+    343 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  GameProject.vcxproj -> C:\Users\volen\source\repos\GameProject\x64\Release\GameProject.exe

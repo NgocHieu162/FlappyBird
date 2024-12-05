@@ -1,0 +1,19 @@
+﻿  Pipe.cpp
+C:\Users\volen\source\repos\GameProject\GameProject\Pipe.cpp(11,44): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\volen\source\repos\GameProject\GameProject\Pipe.cpp(11,44): warning C4244:         with
+C:\Users\volen\source\repos\GameProject\GameProject\Pipe.cpp(11,44): warning C4244:         [
+C:\Users\volen\source\repos\GameProject\GameProject\Pipe.cpp(11,44): warning C4244:             T=unsigned int
+C:\Users\volen\source\repos\GameProject\GameProject\Pipe.cpp(11,44): warning C4244:         ]
+C:\Users\volen\source\repos\GameProject\GameProject\Pipe.cpp(16,48): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\volen\source\repos\GameProject\GameProject\Pipe.cpp(16,44): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\volen\source\repos\GameProject\GameProject\Pipe.cpp(16,44): warning C4244:         with
+C:\Users\volen\source\repos\GameProject\GameProject\Pipe.cpp(16,44): warning C4244:         [
+C:\Users\volen\source\repos\GameProject\GameProject\Pipe.cpp(16,44): warning C4244:             T=unsigned int
+C:\Users\volen\source\repos\GameProject\GameProject\Pipe.cpp(16,44): warning C4244:         ]
+C:\Users\volen\source\repos\GameProject\GameProject\Pipe.cpp(21,48): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\volen\source\repos\GameProject\GameProject\Pipe.cpp(21,44): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\volen\source\repos\GameProject\GameProject\Pipe.cpp(21,44): warning C4244:         with
+C:\Users\volen\source\repos\GameProject\GameProject\Pipe.cpp(21,44): warning C4244:         [
+C:\Users\volen\source\repos\GameProject\GameProject\Pipe.cpp(21,44): warning C4244:             T=unsigned int
+C:\Users\volen\source\repos\GameProject\GameProject\Pipe.cpp(21,44): warning C4244:         ]
+  GameProject.vcxproj -> C:\Users\volen\source\repos\GameProject\x64\Debug\GameProject.exe
