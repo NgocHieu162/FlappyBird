@@ -12,6 +12,12 @@ Land::Land(GameDataRef data) : _data(data)
 	landSprites.push_back(sprite);
 	landSprites.push_back(sprite2);
 }
+
+std::vector<sf::Sprite> &Land::getSprite()
+{
+	return landSprites;
+}
+
 void Land::moveLand(float dt)
 {
 	for (int i = 0; i < landSprites.size(); i++) {

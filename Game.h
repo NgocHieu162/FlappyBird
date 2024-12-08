@@ -8,12 +8,14 @@
 #include "InputManager.h"
 
 
-struct GameData {
+class GameData {
+public:
 	StateMachine machine;
 	sf::RenderWindow window;
 	AssetManager assets;
 	InputManager input;
 };
+
 typedef std::shared_ptr<GameData> GameDataRef;
 
 class Game {

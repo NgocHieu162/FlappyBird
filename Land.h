@@ -11,6 +11,7 @@ private:
 public:
 	Land(GameDataRef data);
 
+	std::vector<sf::Sprite>& getSprite();
 	void moveLand(float dt);
 	void drawLand();
 };

@@ -16,5 +16,4 @@ public:
 
 	void loadFont(std::string name, std::string fileName);
 	sf::Font& getFont(std::string name);
-
 };

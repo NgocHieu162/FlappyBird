@@ -5,7 +5,8 @@
 #include "Game.h"
 #include "Pipe.h"
 #include "Land.h"
-
+#include "Bird.h"
+#include "Collision.h"
 
 class GameState : public State {
 private:
@@ -14,7 +15,8 @@ private:
 	sf::Sprite _background;
 	Pipe* pipe;
 	Land* land;
-		
+	Bird* bird;
+	Collision collision;
 public:
 	GameState(GameDataRef data);
 	void Init();

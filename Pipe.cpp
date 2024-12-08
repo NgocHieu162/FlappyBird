@@ -6,14 +6,22 @@
 Pipe::Pipe(GameDataRef data) : _data(data) {
 
 }
-void Pipe::spawnBottomPipe() {
+
+std::vector<sf::Sprite>& Pipe::getSprite()
+{
+	return pipeSprites;
+}
+
+void Pipe::spawnBottomPipe(std::string color) {
 	sf::Sprite sprite(_data->assets.getTexture("Pipe Up"));
 	sprite.setPosition(_data->window.getSize().x, _data->window.getSize().y - sprite.getGlobalBounds().height - _pipeSpawnYOffset);
 	pipeSprites.push_back(sprite);
 }
-void Pipe::spawnTopPipe() {
+void Pipe::spawnTopPipe(std::string color) {
 	sf::Sprite sprite(_data->assets.getTexture("Pipe Down"));
 	sprite.setPosition(_data->window.getSize().x, -_pipeSpawnYOffset);
+	if (color == "Red")
+		sprite.setColor(sf::Color(255, 0, 0, 0));
 	pipeSprites.push_back(sprite);
 }
 void Pipe::spawnInvisiblePipe() {
@@ -42,5 +50,5 @@ void Pipe::drawPipes() {
 }
 
 void Pipe::RandomisePipeOffSet(){
-	_pipeSpawnYOffset = rand() % (300);
+	_pipeSpawnYOffset = rand() % (250);
 }
