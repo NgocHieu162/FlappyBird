@@ -6,6 +6,7 @@
 #include "Pipe.h"
 #include "Land.h"
 #include "Bird.h"
+#include "Bubble.h"
 #include "Collision.h"
 
 class GameState : public State {
@@ -16,6 +17,7 @@ private:
 	Pipe* pipe;
 	Land* land;
 	Bird* bird;
+	Bubble* bubble;
 	Collision collision;
 public:
 	GameState(GameDataRef data);
