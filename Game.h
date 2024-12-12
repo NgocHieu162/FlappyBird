@@ -8,12 +8,22 @@
 #include "InputManager.h"
 
 
-class GameData {
-public:
-	StateMachine machine;
-	sf::RenderWindow window;
-	AssetManager assets;
-	InputManager input;
+struct GameData {
+    StateMachine machine;
+    sf::RenderWindow window;
+    AssetManager assets;
+    InputManager input;
+
+    static GameData& getInstance() {
+        static GameData instance;
+        return instance;
+    }
+
+    GameData(const GameData&) = delete;
+    GameData& operator=(const GameData&) = delete;
+
+private:
+    GameData() {}
 };
 
 typedef std::shared_ptr<GameData> GameDataRef;
@@ -23,7 +33,7 @@ private:
 	const float dt = 1.0f / 60.0f;
 	sf::Clock _clock;
 
-	GameDataRef _data = std::make_shared<GameData>();
+    GameDataRef _data;
 
 	void Run();
 public:

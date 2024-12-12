@@ -3,7 +3,10 @@
 #include <iostream>
 
 
-Game::Game(int width, int height, std::string title) {
+Game::Game(int width, int height, std::string title) 
+{
+	_data = std::shared_ptr<GameData>(&GameData::getInstance(), [](GameData*) {});
+	// [](GameData*) {}: su dung ham huy tuy chinh de tranh viec huy doi tuong GameData (singleton)
 	_data->window.create(sf::VideoMode(width, height), title,
 		sf::Style::Close | sf::Style::Titlebar);
 	this->_data->machine.addState(StateRef(new GameState(this->_data)), true);
