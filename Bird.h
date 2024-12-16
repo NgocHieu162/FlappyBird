@@ -2,7 +2,10 @@
 
 #include "SFML/Graphics.hpp"
 #include "Game.h"
-
+#include <vector>
+#include "Collision.h"
+#include "Bubble.h"
+#include "Pipe.h"
 
 class Bird {
 private:
@@ -22,4 +25,5 @@ public:
 	sf::Sprite& getSprite();
 	void moveBird(float dt);
 	void drawBird();
+	bool isAlive(std::vector<sf::Sprite> Pipes, Bubble& Bubbles, float dt);
 };

@@ -18,5 +18,9 @@
 #define BUBBLE_SPAWN_FREQUENCY 20.0f
 #define SKILL_DURATION 10
 
-#define INVICIBLE 1
+
+#define NORMAL 0
+#define INVINCIBLE 1
+#define TINY 2
+#define INVISIBLE 3
 
