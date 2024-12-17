@@ -13,7 +13,10 @@ void GameState::Init()
 	_data->assets.loadTexture("Pipe Up", PIPE_UP_FILEPATH);
 	_data->assets.loadTexture("Pipe Down", PIPE_DOWN_FILEPATH);
 	_data->assets.loadTexture("Land", LAND_FILEPATH);
-	_data->assets.loadTexture("Bird", BIRD_FILEPATH);
+	_data->assets.loadTexture("Bird_01", BIRD_01_FILEPATH);
+	_data->assets.loadTexture("Bird_02", BIRD_02_FILEPATH);
+	_data->assets.loadTexture("Bird_03", BIRD_03_FILEPATH);
+	_data->assets.loadTexture("Bird_04", BIRD_04_FILEPATH);
 	_data->assets.loadTexture("Bubble", BUBBLE_FILEPATH);
 
 
@@ -56,7 +59,7 @@ void GameState::Update(float dt)
 	//	}
 	//}
 
-	if (bubble->getSpawnTime() > 5) {
+	if (bubble->getSpawnTime() > BUBBLE_SPAWN_FREQUENCY ) {
 		bubble->SpawnRandomBubble();
 		bubble->setSpawnTime(-bubble->getSpawnTime());
 	}
@@ -105,7 +108,7 @@ void GameState::Update(float dt)
 	//		}
 	//	}
 
-	if (bird->isAlive(pipe->getSprite(), *bubble, dt) == false) {
+	if (bird->isAlive(pipe->getSprite(), land->getSprite(),*bubble, dt) == false) {
 		_data->machine.addState(StateRef(new GameOverState(_data)), true);
 	}
 }
@@ -119,6 +122,7 @@ void GameState::Draw(float dt)
 	pipe->drawPipes();
 	land->drawLand();
 	bird->drawBird();
+	bird->animateBird(clock);
 	bubble->drawBubble();
 
 	_data->window.display();

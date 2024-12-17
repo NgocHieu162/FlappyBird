@@ -6,6 +6,7 @@
 #include "Collision.h"
 #include "Bubble.h"
 #include "Pipe.h"
+#include "Land.h"
 
 class Bird {
 private:
@@ -23,7 +24,8 @@ public:
 	void setSkill(int skillName);
 
 	sf::Sprite& getSprite();
+	void animateBird(sf::Clock clock);
 	void moveBird(float dt);
 	void drawBird();
-	bool isAlive(std::vector<sf::Sprite> Pipes, Bubble& Bubbles, float dt);
+	bool isAlive(std::vector<sf::Sprite> Pipes,std::vector<sf::Sprite> Lands, Bubble& Bubbles, float dt);
 };
