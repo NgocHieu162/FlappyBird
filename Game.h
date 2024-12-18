@@ -9,10 +9,10 @@
 
 
 struct GameData {
-    StateMachine machine;
+    StateMachine* machine;
     sf::RenderWindow window;
-    AssetManager assets;
-    InputManager input;
+    AssetManager* assets;
+    InputManager* input;
 
     static GameData& getInstance() {
         static GameData instance;
@@ -23,7 +23,11 @@ struct GameData {
     GameData& operator=(const GameData&) = delete;
 
 private:
-    GameData() {}
+    GameData(){
+        machine = &StateMachine::getInstance();
+		assets = &AssetManager::getInstance();
+		input = &InputManager::getInstance();
+    }
 };
 
 typedef std::shared_ptr<GameData> GameDataRef;

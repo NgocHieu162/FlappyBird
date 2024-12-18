@@ -15,9 +15,18 @@ private:
 	bool _isRemoving;
 	bool _isAdding;
 	bool _isReplacing;
-public:
+
 	StateMachine() {}
 	~StateMachine() {}
+
+public:
+	static StateMachine& getInstance() {
+		static StateMachine instance;
+		return instance;
+	}
+
+	StateMachine(const StateMachine&) = delete;
+	StateMachine& operator=(const StateMachine&) = delete;
 
 	void addState(StateRef newState, bool isReplacing = true);
 	void removeState();

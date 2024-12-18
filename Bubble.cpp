@@ -52,7 +52,7 @@ void Bubble::setBubbleStrategy(BubbleStrategy* bubbleStrategy)
 
 void InvincibleBubble::spawnBubble(GameDataRef _data, std::vector<sf::Sprite>& bubbleSprites)
 {
-	sf::Sprite sprite(_data->assets.getTexture("Bubble"));
+	sf::Sprite sprite(_data->assets->getTexture("Bubble"));
 	sprite.setPosition(_data->window.getSize().x, _data->window.getSize().y / 2);
 	sprite.setColor(sf::Color::Red);
 	bubbleSprites.push_back(sprite);
@@ -60,7 +60,7 @@ void InvincibleBubble::spawnBubble(GameDataRef _data, std::vector<sf::Sprite>& b
 
 void TinyBubble::spawnBubble(GameDataRef _data, std::vector<sf::Sprite>& bubbleSprites)
 {
-	sf::Sprite sprite(_data->assets.getTexture("Bubble"));
+	sf::Sprite sprite(_data->assets->getTexture("Bubble"));
 	sprite.setPosition(_data->window.getSize().x, _data->window.getSize().y / 2);
 	sprite.setColor(sf::Color::Green);
 	sprite.setScale(0.5, 0.5);
@@ -68,7 +68,7 @@ void TinyBubble::spawnBubble(GameDataRef _data, std::vector<sf::Sprite>& bubbleS
 }
 void InvisibleBubble::spawnBubble(GameDataRef _data, std::vector<sf::Sprite>& bubbleSprites)
 {
-	sf::Sprite sprite(_data->assets.getTexture("Bubble"));
+	sf::Sprite sprite(_data->assets->getTexture("Bubble"));
 	sprite.setPosition(_data->window.getSize().x, _data->window.getSize().y / 2);
 	sprite.setColor(sf::Color::Magenta);
 	bubbleSprites.push_back(sprite);

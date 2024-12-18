@@ -4,7 +4,7 @@
 
 Bird::Bird(GameDataRef data) : _data(data)
 {
-	sf::Sprite sprite(_data->assets.getTexture("Bird_01"));
+	sf::Sprite sprite(_data->assets->getTexture("Bird_01"));
 	sprite.setPosition(_data->window.getSize().x/2.0, _data->window.getSize().y /2-200);
 	this->birdSprite = sprite;
 
@@ -19,17 +19,17 @@ void Bird::animateBird(sf::Clock clock)
 {
 	if (clock.getElapsedTime().asSeconds() > BIRD_ANIMATION_DURATION / 2)
 	{ 
-		if (birdSprite.getTexture() == &_data->assets.getTexture("Bird_01"))
+		if (birdSprite.getTexture() == &_data->assets->getTexture("Bird_01"))
 		{
-			birdSprite.setTexture(_data->assets.getTexture("Bird_03"));
+			birdSprite.setTexture(_data->assets->getTexture("Bird_03"));
 		}
-		else if (birdSprite.getTexture() == &_data->assets.getTexture("Bird_02"))
+		else if (birdSprite.getTexture() == &_data->assets->getTexture("Bird_02"))
 		{
-			birdSprite.setTexture(_data->assets.getTexture("Bird_03"));
+			birdSprite.setTexture(_data->assets->getTexture("Bird_03"));
 		}
-		else if (birdSprite.getTexture() == &_data->assets.getTexture("Bird_03"))
+		else if (birdSprite.getTexture() == &_data->assets->getTexture("Bird_03"))
 		{
-			birdSprite.setTexture(_data->assets.getTexture("Bird_01"));
+			birdSprite.setTexture(_data->assets->getTexture("Bird_01"));
 		
 		}
 		clock.restart();
@@ -52,7 +52,7 @@ void Bird::moveBird(float dt)
 	}
 	else if (birdSprite.getRotation() == 90)
 	{
-		birdSprite.setTexture(_data->assets.getTexture("Bird_02"));
+		birdSprite.setTexture(_data->assets->getTexture("Bird_02"));
 	}
 
 }

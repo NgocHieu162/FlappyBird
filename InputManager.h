@@ -2,9 +2,18 @@
 #include <SFML/Graphics.hpp>
 
 class InputManager {
-public:
+private:
 	InputManager() {}
 	~InputManager() {}
+public:
+	
+	static InputManager& getInstance() {
+		static InputManager instance;
+		return instance;
+	}
+
+	InputManager(const InputManager&) = delete;
+	InputManager& operator=(const InputManager&) = delete;
 
 	bool isSpriteClicked(sf::Sprite object, sf::Mouse::Button button,
 		sf::RenderWindow& window);

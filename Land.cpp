@@ -3,8 +3,8 @@
 
 Land::Land(GameDataRef data) : _data(data)
 {
-	sf::Sprite sprite(_data->assets.getTexture("Land"));
-	sf::Sprite sprite2(_data->assets.getTexture("Land"));
+	sf::Sprite sprite(_data->assets->getTexture("Land"));
+	sf::Sprite sprite2(_data->assets->getTexture("Land"));
 
 	sprite.setPosition(0, _data->window.getSize().y - sprite.getGlobalBounds().height);
 	sprite2.setPosition(sprite.getGlobalBounds().width, _data->window.getSize().y - sprite.getGlobalBounds().height);

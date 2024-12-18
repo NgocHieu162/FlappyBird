@@ -7,6 +7,7 @@
 #define PIPE_UP_FILEPATH "images/PipeUp.png"
 #define PIPE_DOWN_FILEPATH "images/PipeDown.png"
 #define LAND_FILEPATH "images/Land.png"
+#define	BIRD_FILEPATH "images/Bird-01.png"
 #define	BIRD_01_FILEPATH "images/Bird-01.png"
 #define BIRD_02_FILEPATH "images/Bird-02.png"
 #define BIRD_03_FILEPATH "images/Bird-03.png"
@@ -30,4 +31,3 @@
 #define INVINCIBLE 1
 #define TINY 2
 #define INVISIBLE 3
-

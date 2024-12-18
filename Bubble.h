@@ -52,6 +52,7 @@ public:
 	void spawnBubble(GameDataRef _data, std::vector<sf::Sprite>& bubbleSprites);
 	int newSkillBird(sf::Sprite &BirdSprite);
 };
+
 class InvisibleBubble : public BubbleStrategy {
 public: 	
 	void spawnBubble(GameDataRef _data, std::vector<sf::Sprite>& bubbleSprites);
@@ -75,6 +76,5 @@ public:
 	void SpawnRandomBubble();
 	void setBubbleStrategy(BubbleStrategy* bubbleStrategy);
 	int newSkillBird(sf::Sprite& BirdSprite);
-
 };
 

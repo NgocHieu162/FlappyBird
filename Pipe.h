@@ -15,8 +15,8 @@ public:
 	Pipe(GameDataRef data);
 	
 	std::vector<sf::Sprite>& getSprite();
-	void spawnBottomPipe(std::string color);
-	void spawnTopPipe(std::string color);
+	void spawnBottomPipe();
+	void spawnTopPipe();
 	void spawnInvisiblePipe();
 	void movePipes(float dt);
 	void drawPipes();
