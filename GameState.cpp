@@ -13,10 +13,11 @@ void GameState::Init()
 	_data->assets->loadTexture("Pipe Up", PIPE_UP_FILEPATH);
 	_data->assets->loadTexture("Pipe Down", PIPE_DOWN_FILEPATH);
 	_data->assets->loadTexture("Land", LAND_FILEPATH);
-	_data->assets->loadTexture("Bird_01", BIRD_FILEPATH);
+	_data->assets->loadTexture("Bird_01", BIRD_01_FILEPATH);
 	_data->assets->loadTexture("Bird_02", BIRD_02_FILEPATH);
 	_data->assets->loadTexture("Bird_03", BIRD_03_FILEPATH);
 	_data->assets->loadTexture("Bird_04", BIRD_04_FILEPATH);
+
 	_data->assets->loadTexture("Bubble", BUBBLE_FILEPATH);
 
 
@@ -32,7 +33,7 @@ void GameState::Init()
 void GameState::HandleInput()
 {
 	sf::Event event;
-	while (_data->window.pollEvent(event)) {
+	while(_data->window.pollEvent(event)) {
 		if (sf::Event::Closed == event.type) {
 			_data->window.close();
 		}
@@ -78,41 +79,41 @@ void GameState::Update(float dt)
 	std::vector<sf::Sprite> landSprites = land->getSprite();
 	std::vector<sf::Sprite> pipeSprites = pipe->getSprite();
 
-	//	for (int i = 0; i < bubbleSprites.size(); i++) {
-			//if (collision.checkCollision(bird->getSprite(), bubbleSprites[i])) {
-				//bird->setSkill(INVINCIBLE);
-				//bird->getSprite().setColor(sf::Color::Red);
-				//bubbleSprites.erase(bubbleSprites.begin() + i);
-			//}
-
+//	for (int i = 0; i < bubbleSprites.size(); i++) {
+		//if (collision.checkCollision(bird->getSprite(), bubbleSprites[i])) {
+			//bird->setSkill(INVINCIBLE);
+			//bird->getSprite().setColor(sf::Color::Red);
+			//bubbleSprites.erase(bubbleSprites.begin() + i);
 		//}
-		//bubble->setSprite(bubbleSprites); // update the bubbleSprites vector
+
+	//}
+	//bubble->setSprite(bubbleSprites); // update the bubbleSprites vector
+
+	
 
 
+	//if (bird->getSkill() != INVINCIBLE)
+	//{
+	//		for (int i = 0; i < landSprites.size(); i++) {
+	//			if (collision.checkCollision(bird->getSprite(), landSprites[i])) {
+	//				_data->machine.addState(StateRef(new GameOverState(_data)), true);
+	//			}
+	//		}
 
+	//		if (collision.getIsCollide() == false) {
+	//			for (int i = 0; i < pipeSprites.size(); i++) {
+	//				if (collision.checkCollision(bird->getSprite(), pipeSprites[i])) {
+	//					_data->machine.addState(StateRef(new GameOverState(_data)), true);
+	//				}
+	//			}
+	//		}
+	//	}
 
-		//if (bird->getSkill() != INVINCIBLE)
-		//{
-		//		for (int i = 0; i < landSprites.size(); i++) {
-		//			if (collision.checkCollision(bird->getSprite(), landSprites[i])) {
-		//				_data->machine.addState(StateRef(new GameOverState(_data)), true);
-		//			}
-		//		}
-
-		//		if (collision.getIsCollide() == false) {
-		//			for (int i = 0; i < pipeSprites.size(); i++) {
-		//				if (collision.checkCollision(bird->getSprite(), pipeSprites[i])) {
-		//					_data->machine.addState(StateRef(new GameOverState(_data)), true);
-		//				}
-		//			}
-		//		}
-		//	}
-
-	if (bird->isAlive(pipe->getSprite(),landSprites ,*bubble, dt) == false) {
+	if (bird->isAlive(pipe->getSprite(),land->getSprite(), *bubble, dt) == false) {
 		_data->machine->addState(StateRef(new GameOverState(_data)), true);
 	}
 }
-
+          
 
 void GameState::Draw(float dt)
 {

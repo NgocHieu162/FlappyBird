@@ -24,7 +24,7 @@
 #define BUBBLE_SPAWN_FREQUENCY 20.0f
 #define SKILL_DURATION 10
 
-#define GRAVITY 350.0f
+#define GRAVITY 9.8f / 20.f
 #define BIRD_ANIMATION_DURATION 0.4f
 
 #define NORMAL 0

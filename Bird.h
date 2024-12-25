@@ -14,6 +14,12 @@ private:
 	sf::Sprite birdSprite;
 	int skill;
 	float skill_duration = 0;
+
+	bool isFlying = false;
+	sf::Vector2<float> position;
+	sf::Vector2<float> velocity;
+	sf::Vector2<float> acceleration;
+
 public:
 	Bird(GameDataRef data);
 
@@ -26,6 +32,8 @@ public:
 	sf::Sprite& getSprite();
 	void animateBird(sf::Clock clock);
 	void moveBird(float dt);
+	void handler(float dt);
+	void update();
 	void drawBird();
 	bool isAlive(std::vector<sf::Sprite> Pipes,std::vector<sf::Sprite> Lands, Bubble& Bubbles, float dt);
 };

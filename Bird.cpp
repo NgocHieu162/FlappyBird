@@ -4,10 +4,14 @@
 
 Bird::Bird(GameDataRef data) : _data(data)
 {
-	sf::Sprite sprite(_data->assets->getTexture("Bird_01"));
-	sprite.setPosition(_data->window.getSize().x/2.0, _data->window.getSize().y /2-200);
-	this->birdSprite = sprite;
+	isFlying = false;
+	position = sf::Vector2<float>(_data->window.getSize().x / 2.0, _data->window.getSize().y / 2 - 200);
+	velocity = sf::Vector2<float>(0, -acceleration.y * 18);
+	acceleration = sf::Vector2<float>(0, GRAVITY);
 
+	sf::Sprite sprite(_data->assets->getTexture("Bird_01"));
+	sprite.setPosition(position.x, position.y);
+	this->birdSprite = sprite;
 }
 
 sf::Sprite& Bird::getSprite()
@@ -37,15 +41,20 @@ void Bird::animateBird(sf::Clock clock)
 }
 
 void Bird::moveBird(float dt)
+{
+	handler(dt);
+	update();
+}
+
+void Bird::handler(float dt)
 {	
-	//set animation for bird
-	birdSprite.move(0, GRAVITY * dt);
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
 	{
 		birdSprite.setRotation(-25);
-		birdSprite.move(0, -1000 * dt);
 
+		velocity.y = - acceleration.y * 18;
 	}
+
 	if (birdSprite.getRotation() != 90)
 	{
 		birdSprite.setRotation(birdSprite.getRotation() + 1);
@@ -54,7 +63,22 @@ void Bird::moveBird(float dt)
 	{
 		birdSprite.setTexture(_data->assets->getTexture("Bird_02"));
 	}
+}
 
+void Bird::update()
+{
+	velocity.y += acceleration.y;
+	position.y += velocity.y;
+	if (position.y < 0)
+	{
+		position.y = 0;
+	}
+	else if (position.y > _data->window.getSize().y - birdSprite.getGlobalBounds().height)
+	{
+		position.y = _data->window.getSize().y - birdSprite.getGlobalBounds().height;
+	}
+
+	birdSprite.setPosition(position.x, position.y);
 }
 
 void Bird::drawBird()

@@ -11,7 +11,10 @@ bool Collision::getIsCollide()
 
 bool Collision::checkCollision(sf::Sprite sprite1, sf::Sprite sprite2)
 {
-	if (sprite1.getGlobalBounds().intersects(sprite2.getGlobalBounds()))
+	sf::Rect<float> rec = sprite2.getGlobalBounds();
+	rec.width -= 10;
+	rec.left += 5;
+	if (sprite1.getGlobalBounds().intersects(rec))
 		return true;
 	return false;
 }

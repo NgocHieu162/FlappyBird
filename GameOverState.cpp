@@ -23,7 +23,7 @@ void GameOverState::HandleInput()
 		if (sf::Event::Closed == event.type) {
 			_data->window.close();
 		}
-		if(sf::Keyboard::isKeyPressed(sf::Keyboard::R)) {
+		if(sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
 			_data->machine->addState(StateRef(new GameState(_data)), true);
 		}
 	}
