@@ -106,7 +106,7 @@ void Bird::setDuration(float dt)
 	skill_duration += dt;
 }
 
-bool Bird::isAlive(std::vector<sf::Sprite>pipeSprites,std::vector<sf::Sprite> Lands, Bubble& Bubbles,float dt)
+bool Bird::isAlive(std::vector<sf::Sprite> &pipeSprites,std::vector<sf::Sprite>& Lands, Bubble& Bubbles,float dt)
 {
 
 	Collision collision;
@@ -122,6 +122,11 @@ bool Bird::isAlive(std::vector<sf::Sprite>pipeSprites,std::vector<sf::Sprite> La
 		}
 	}
 	Bubbles.setSprite(BubbleSprite);
+	//pause screen
+	//no
+	//pause screen
+	
+
 	if (skill!= NORMAL)
 	{
 		if (skill_duration > SKILL_DURATION)
@@ -137,7 +142,25 @@ bool Bird::isAlive(std::vector<sf::Sprite>pipeSprites,std::vector<sf::Sprite> La
 		}
 	}
 
-	if (skill == INVINCIBLE || skill ==INVISIBLE)
+	if (skill == INVINCIBLE)
+	{
+		if (collision.getIsCollide() == false)
+		{
+			for (int i = 0; i < pipeSprites.size(); i++)
+			{
+				if (collision.checkCollision(birdSprite, pipeSprites[i]))
+				{
+					pipeSprites.erase(pipeSprites.begin() + i);
+				}
+
+			}
+			
+		}
+		return true;
+	}
+
+
+	if ( skill ==INVISIBLE)
 	{
 		return true;
 	}
@@ -152,6 +175,7 @@ bool Bird::isAlive(std::vector<sf::Sprite>pipeSprites,std::vector<sf::Sprite> La
 		}
 	}
 
+
 	if (collision.getIsCollide() == false) {
 		for (int i = 0; i < pipeSprites.size(); i++) {
 			if (collision.checkCollision(birdSprite, pipeSprites[i])) {
@@ -159,6 +183,7 @@ bool Bird::isAlive(std::vector<sf::Sprite>pipeSprites,std::vector<sf::Sprite> La
 			}
 		}
 	}
+
 	return true;
 }	
 

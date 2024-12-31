@@ -35,5 +35,5 @@ public:
 	void handler(float dt);
 	void update();
 	void drawBird();
-	bool isAlive(std::vector<sf::Sprite> Pipes,std::vector<sf::Sprite> Lands, Bubble& Bubbles, float dt);
+	bool isAlive(std::vector<sf::Sprite>& Pipes,std::vector<sf::Sprite>& Lands, Bubble& Bubbles, float dt);
 };
